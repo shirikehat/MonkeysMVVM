@@ -10,8 +10,26 @@
         <Entry Placeholder="הכנס שם מדינה" PlaceholderColor="LightGrey" Text="{Binding Country}"/>
         <Button Text="חפש" WidthRequest="150" Command="{Binding SearchByCountryCommand}"/>
         
-        
-        
-        
+        <Label>
+            <Label.FormattedText>
+                <FormattedString>
+                    <Span Text="מספר הקופים שנמצאו" FontAttributes="Bold"/>
+                    <Span Text="{Binding Count}"/>
+                </FormattedString>
+            </Label.FormattedText>
+        </Label>
+
+        <Label Text="{Binding Name}"/>
+
+
+        <Border>
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="100"/>
+            </Border.StrokeShape>
+        <Image Source="{Binding ImageUrl}" HeightRequest="200" WidthRequest="200"/>
+        </Border>
+
+
+
     </VerticalStackLayout>
 </ContentPage>
