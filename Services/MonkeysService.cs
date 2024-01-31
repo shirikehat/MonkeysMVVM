@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.NetworkInformation;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -181,6 +182,13 @@ namespace MonkeysMVVM.Services
             monkeys.Remove(monkey);
         }
 
-     
+        public List<Monkey> FindMonkeyByLocation(string location)
+        {
+            return monkeys.Where(x=>x.Location== location).ToList();
+        }
+
+        
+
+
     }
 }
