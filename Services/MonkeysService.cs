@@ -186,6 +186,8 @@ namespace MonkeysMVVM.Services
         {
             return monkeys.Where(x=>x.Location== location).ToList();
         }
+        public List<Monkey> GetMonkeys()
+        { return monkeys; }
 
         
 
