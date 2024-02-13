@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MonkeysMVVM.Views.MonkeysPage"
-             xmlns:viewmodel="clr-namespace:MonkeysMVVM.ViewModels"
-             x:DataType="viewmodel:MonkeysPageViewModel"
-             Title="MonkeysPage">
+<ContentPage
+    x:Class="MonkeysMVVM.Views.MonkeysPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:viewmodel="clr-namespace:MonkeysMVVM.ViewModels"
+    Title="MonkeysPage"
+    x:DataType="viewmodel:MonkeysPageViewModel">
     <ScrollView>
         <StackLayout>
-            <Button Command="{Binding ICommand}" Text="הכנס קוף"/>
-            <CollectionView  ItemsSource="{Binding Monkeys}" EmptyView="no monkeys">
-                
-            </CollectionView>
+            <Button Command="{Binding LoadMonkeysCommand}" Text="הכנס קוף" />
+            <CollectionView EmptyView="no monkeys" ItemsSource="{Binding Monkeys}" />
         </StackLayout>
     </ScrollView>
-    
+
 </ContentPage>

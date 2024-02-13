@@ -23,7 +23,7 @@ namespace MonkeysMVVM.ViewModels
             LoadMonkeysCommand = new Command(async () => await LoadMonkeys());
         }
 
-        private Task LoadMonkeys()
+        private async Task LoadMonkeys()
         {
             MonkeysService service= new MonkeysService();
             var List= service.GetMonkeys();
@@ -31,7 +31,7 @@ namespace MonkeysMVVM.ViewModels
             {
                 Monkeys.Add(List[i]);
             }
-            return Task.FromResult(0);
+            
         }
     }
 }
