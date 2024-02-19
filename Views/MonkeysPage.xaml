@@ -9,9 +9,10 @@
     x:DataType="viewmodel:MonkeysPageViewModel">
     <ScrollView>
         <StackLayout>
+            <Button Text="קוף" Command="{Binding NavigateToShowMonkey}"/>                 
             <Button Command="{Binding LoadMonkeysCommand}" Text="הכנס קוף" />
             <RefreshView Command="{Binding LoadMonkeysCommand}" IsRefreshing="{Binding IsRefreshing}">
-                <CollectionView EmptyView="no monkeys" ItemsSource="{Binding Monkeys}" SelectionMode="Single">
+                <CollectionView EmptyView="no monkeys" ItemsSource="{Binding Monkeys}" SelectedItem="{Binding SelectedMonkey}" SelectionMode="Single">
                     <CollectionView.ItemTemplate>
                         <DataTemplate x:DataType="models:Monkey">
                             <Frame>

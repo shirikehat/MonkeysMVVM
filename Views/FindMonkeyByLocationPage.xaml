@@ -29,6 +29,9 @@
         <Image Source="{Binding ImageUrl}" HeightRequest="200" />
         </Border>
 
+        
+
+
 
 
     </VerticalStackLayout>
