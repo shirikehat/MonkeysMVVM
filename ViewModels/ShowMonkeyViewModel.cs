@@ -12,9 +12,15 @@ using System.Windows.Input;
 
 namespace MonkeysMVVM.ViewModels
 {
+    [QueryProperty(nameof(Monkey),"Monkey")]
+    [QueryProperty(nameof(Title), "title")]
     public class ShowMonkeyViewModel:ViewModel
     {
-        Monkey monkey;
+        private string title;
+        public string Title { get=> title; set { title = value; OnPropertyChanged(); } }
+        private Monkey monkey;
+        public Monkey Monkey { get => monkey; set { monkey = value;GetMonkey(); } }
+        
         public ICommand ShowMonkeyCommand { get; set; }
         public ICommand ShowMonkeyImage { get; set; }   
         private string name;
@@ -57,12 +63,13 @@ namespace MonkeysMVVM.ViewModels
 
         private void GetMonkey()
         {
-            MonkeysService service = new MonkeysService();
-            monkey = service.GetRandomMonkey();
+            //MonkeysService service = new MonkeysService();
+            //monkey = service.GetRandomMonkey();
             if (monkey != null)
             {
                 Name=monkey.Name;
                 Location=monkey.Location;
+                ImageUrl=monkey.ImageUrl;
             }
             //check if the command can work now
                 ((Command)ShowMonkeyImage).ChangeCanExecute();

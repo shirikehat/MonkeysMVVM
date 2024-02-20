@@ -5,22 +5,27 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:models="clr-namespace:MonkeysMVVM.Models"
     xmlns:viewmodel="clr-namespace:MonkeysMVVM.ViewModels"
-    Title="MonkeysPage"
+    Title="רשימת קופים"
     x:DataType="viewmodel:MonkeysPageViewModel">
+
     <ScrollView>
         <StackLayout>
-            <Button Text="קוף" Command="{Binding NavigateToShowMonkey}"/>                 
+            <Button Command="{Binding NavigateToShowMonkey}" Text="קוף" />
             <Button Command="{Binding LoadMonkeysCommand}" Text="הכנס קוף" />
             <RefreshView Command="{Binding LoadMonkeysCommand}" IsRefreshing="{Binding IsRefreshing}">
-                <CollectionView EmptyView="no monkeys" ItemsSource="{Binding Monkeys}" SelectedItem="{Binding SelectedMonkey}" SelectionMode="Single">
+                <CollectionView
+                    EmptyView="no monkeys"
+                    ItemsSource="{Binding Monkeys}"
+                    SelectedItem="{Binding SelectedMonkey}"
+                    SelectionMode="Single">
                     <CollectionView.ItemTemplate>
                         <DataTemplate x:DataType="models:Monkey">
-                            <Frame>
-                                <Grid ColumnDefinitions="*,*" RowDefinitions="*">
-                                    <Image Aspect="AspectFill" Source="{Binding ImageUrl}" />
-                                    <Label Grid.Column="1" Text="{Binding Name}" />
-                                </Grid>
-                            </Frame>
+
+                            <Grid ColumnDefinitions="*,*" RowDefinitions="*">
+                                <Image Aspect="AspectFill" Source="{Binding ImageUrl}" />
+                                <Label Grid.Column="1" Text="{Binding Name}" />
+                            </Grid>
+
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>

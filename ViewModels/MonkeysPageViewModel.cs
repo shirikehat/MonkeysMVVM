@@ -29,9 +29,10 @@ namespace MonkeysMVVM.ViewModels
 
         private async Task GoToMonkeyPage()
         {
-            Dictionary<string, object> di= new Dictionary<string, object>();
-            di.Add("Monkey", SelectedMonkey);
-            await AppShell.Current.GoToAsync("ShowMonkey",di);
+            Dictionary<string, object> data= new Dictionary<string, object>();
+            data.Add("Monkey", SelectedMonkey);
+            await AppShell.Current.GoToAsync($"ShowMonkey?title=פרטי הקוף {SelectedMonkey.Name}",data);
+            SelectedMonkey = null;
         }
 
         private async Task LoadMonkeys()
