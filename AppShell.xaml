@@ -6,9 +6,25 @@
     xmlns:local="clr-namespace:MonkeysMVVM.Views"
     Shell.FlyoutBehavior="Disabled">
 
+    <TabBar>
+            <ShellContent ContentTemplate="{DataTemplate views:MenuPage}" Icon="home.png" Route="Homepage"/>
+
+        <Tab Icon="search.png">
+            <ShellContent Title="סינון" ContentTemplate="{DataTemplate views:FindMonkeyByLocationpage}" Icon="search.png"/>
+            <ShellContent Title="רענון" ContentTemplate="{DataTemplate views:MonkeysPage}"/>
+        </Tab>
+
+
+
+    </TabBar>
+    
+    
     <ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate local:MonkeysPage}"
         Route="MainPage" />
 
 </Shell>
+
+    
+    
