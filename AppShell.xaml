@@ -3,28 +3,50 @@
     x:Class="MonkeysMVVM.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:MonkeysMVVM.Views"
-    Shell.FlyoutBehavior="Disabled">
+    xmlns:views="clr-namespace:MonkeysMVVM.Views"
+    Shell.FlyoutBehavior="Flyout">
 
-    <TabBar>
-            <ShellContent ContentTemplate="{DataTemplate views:MenuPage}" Icon="home.png" Route="Homepage"/>
+    <!--<TabBar Shell.TabBarUnselectedColor="Grey">
+        <ShellContent
+            ContentTemplate="{DataTemplate views:ShowMonkeyView}"
+            Icon="home.png"
+            Route="Homepage" />
 
         <Tab Icon="search.png">
-            <ShellContent Title="סינון" ContentTemplate="{DataTemplate views:FindMonkeyByLocationpage}" Icon="search.png"/>
-            <ShellContent Title="רענון" ContentTemplate="{DataTemplate views:MonkeysPage}"/>
+            <ShellContent
+                Title="חיפוש"
+                ContentTemplate="{DataTemplate views:FindMonkeyByLocationPage}"
+                Icon="search.png" />
+            <ShellContent Title="רענון" ContentTemplate="{DataTemplate views:MonkeysPage}" />
         </Tab>
 
 
 
-    </TabBar>
+    </TabBar>-->
     
     
-    <ShellContent
+
+    <FlyoutItem Title="Home" FlyoutDisplayOptions="AsMultipleItems" Icon="home.png">
+        <ShellContent
+             ContentTemplate="{DataTemplate views:ShowMonkeyView}"
+               Icon="home.png"
+               Route="Homepage" />
+        <ShellContent
+         Title="חיפוש"
+          ContentTemplate="{DataTemplate views:FindMonkeyByLocationPage}"
+             Icon="search.png" />
+        
+        <ShellContent Title="רענון" ContentTemplate="{DataTemplate views:MonkeysPage}" />
+
+    </FlyoutItem>
+
+    
+
+    <!--<ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate local:MonkeysPage}"
-        Route="MainPage" />
+        Route="MainPage" />-->
 
 </Shell>
 
-    
-    
+

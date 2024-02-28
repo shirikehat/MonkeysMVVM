@@ -10,8 +10,8 @@
 
     <ScrollView>
         <StackLayout>
-            <Button Command="{Binding NavigateToShowMonkey}" Text="קוף" />
-            <Button Command="{Binding LoadMonkeysCommand}" Text="הכנס קוף" />
+            <Button Command="{Binding NavigateToShowMonkey}" Text="פרטים" />
+            <Button Command="{Binding LoadMonkeysCommand}" Text="הכנס קופים" />
             <RefreshView Command="{Binding LoadMonkeysCommand}" IsRefreshing="{Binding IsRefreshing}">
                 <CollectionView
                     EmptyView="no monkeys"
